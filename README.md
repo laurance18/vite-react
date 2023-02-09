@@ -1,3 +1,3 @@
 # vite-react
 
-First app I made using vite-react.
+Learning repo for React.
