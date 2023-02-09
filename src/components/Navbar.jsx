@@ -1,4 +1,5 @@
 import logo from '../assets/react-icon-small.png'
+import './Navbar.css'
 
 export default function Navbar() {
     return (
