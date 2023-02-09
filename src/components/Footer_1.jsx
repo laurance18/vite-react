@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer_1() {
     return (
         <div >
             <section class="bg-white">
