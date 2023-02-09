@@ -6,7 +6,7 @@ import Footer_2 from'./components/Footer_2.jsx'
 function App() {
   return (
     <div className="App">
-      <Footer_1 />
+      <Footer_2 />
     </div>
   )
 }
