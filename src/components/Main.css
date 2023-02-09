@@ -2,6 +2,10 @@ main {
     background-color: #282D35;
     padding: 57px 27px;
     color: #FFFFFF;
+    
+    background-image: url("../assets/react-icon-large.png");
+    background-repeat: no-repeat;
+    background-position: right center;
 }
 
 main > h1 {
