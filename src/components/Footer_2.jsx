@@ -9,7 +9,7 @@ export default function Footer_2() {
                 <div class="sm:flex sm:items-center sm:justify-between">
                 <div class="text-yellow-700 flex items-center">
                     <img src={isslogo} class="w-16"/>
-                    <p class="pl-4">IZTECH SOFTWARE SOCIETY</p>
+                    <p class="pl-4 text-xl">IZTECH SOFTWARE SOCIETY</p>
                 </div>
 
                 <ul class="flex justify-start gap-6 mt-8 sm:mt-0 sm:justify-end">
@@ -114,40 +114,22 @@ export default function Footer_2() {
                 </div>
 
                 <div
-                class="grid grid-cols-1 gap-8 pt-8 border-t border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16"
+                class="flex justify-evenly flex-wrap gap-8 pt-8 border-t border-gray-100 lg:pt-16"
                 >
                 <div>
-                    <p class="font-medium text-gray-900">Services</p>
+                    <p class="font-semibold text-gray-900">Hakkımızda</p>
 
-                    <nav aria-label="Footer Navigation - Services" class="mt-6">
+                    <nav aria-label="Footer Navigation - About" class="mt-6">
                     <ul class="space-y-4 text-sm">
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            1on1 Coaching
+                            placeholder
                         </a>
                         </li>
 
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Company Review
-                        </a>
-                        </li>
-
-                        <li>
-                        <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Accounts Review
-                        </a>
-                        </li>
-
-                        <li>
-                        <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            HR Consulting
-                        </a>
-                        </li>
-
-                        <li>
-                        <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            SEO Optimisation
+                            placeholder
                         </a>
                         </li>
                     </ul>
@@ -155,25 +137,19 @@ export default function Footer_2() {
                 </div>
 
                 <div>
-                    <p class="font-medium text-gray-900">Company</p>
+                    <p class="font-semibold text-gray-900">Etkinliklerimiz</p>
 
-                    <nav aria-label="Footer Navigation - Company" class="mt-6">
+                    <nav aria-label="Footer Navigation - Events" class="mt-6">
                     <ul class="space-y-4 text-sm">
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            About
+                            placeholder
                         </a>
                         </li>
 
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Meet the Team
-                        </a>
-                        </li>
-
-                        <li>
-                        <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Accounts Review
+                            placeholder
                         </a>
                         </li>
                     </ul>
@@ -181,25 +157,19 @@ export default function Footer_2() {
                 </div>
 
                 <div>
-                    <p class="font-medium text-gray-900">Helpful Links</p>
+                    <p class="font-semibold text-gray-900">Yarışmalarımız</p>
 
-                    <nav aria-label="Footer Navigation - Company" class="mt-6">
+                    <nav aria-label="Footer Navigation - Competitions" class="mt-6">
                     <ul class="space-y-4 text-sm">
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Contact
+                            placeholder
                         </a>
                         </li>
 
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            FAQs
-                        </a>
-                        </li>
-
-                        <li>
-                        <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Live Chat
+                            placeholder
                         </a>
                         </li>
                     </ul>
@@ -207,31 +177,39 @@ export default function Footer_2() {
                 </div>
 
                 <div>
-                    <p class="font-medium text-gray-900">Legal</p>
+                    <p class="font-semibold text-gray-900">Paydaşlarımız</p>
 
-                    <nav aria-label="Footer Navigation - Legal" class="mt-6">
+                    <nav aria-label="Footer Navigation - Stakeholders" class="mt-6">
                     <ul class="space-y-4 text-sm">
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Accessibility
+                            placeholder
                         </a>
                         </li>
 
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Returns Policy
+                            placeholder
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-gray-900">İletişim</p>
+
+                    <nav aria-label="Footer Navigation - Contact" class="mt-6">
+                    <ul class="space-y-4 text-sm">
+                        <li>
+                        <a href="#" class="text-gray-700 transition hover:opacity-75">
+                            placeholder
                         </a>
                         </li>
 
                         <li>
                         <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Refund Policy
-                        </a>
-                        </li>
-
-                        <li>
-                        <a href="#" class="text-gray-700 transition hover:opacity-75">
-                            Hiring Statistics
+                            placeholder
                         </a>
                         </li>
                     </ul>
