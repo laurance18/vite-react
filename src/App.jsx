@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import Footer_1 from'./components/Footer_1.jsx'
-import Footer_2 from'./components/Footer_2.jsx'
+import Main from './components/Main.jsx'
+import Navbar from './components/Navbar.jsx'
 
 function App() {
   return (
     <div className="App">
-      <Footer_2 />
+      <Navbar />
+      <Main />
     </div>
   )
 }
