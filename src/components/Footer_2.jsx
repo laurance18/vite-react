@@ -1,3 +1,4 @@
+import React from 'react'
 import isslogo from '../assets/iss.png'
 
 export default function Footer_2() {
