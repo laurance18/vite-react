@@ -3,20 +3,28 @@ import './App.css'
 import Navbar from './airbnb_clone/components/Navbar.jsx'
 import Hero from './airbnb_clone/components/Hero.jsx'
 import Card from './airbnb_clone/components/Card'
+import data from './airbnb_clone/data.js'
 
 function App() {
+  const cards = data.map(item => {
+    console.log(item.coverImg)
+    return (<Card 
+      img={item.coverImg}
+      rating={item.stats.rating}
+      reviewCount={item.stats.reviewCount}
+      location={item.location}
+      title={item.title}
+      price={item.price}
+    />)
+  })
+  
   return (
     <div className="App">
       <Navbar />
       <Hero />
-      <Card 
-        img="katie-zaferes.png"
-        rating ="5.0"
-        reviewCount={6}
-        country="USA"
-        title="Life Lessons with Katie Zaferes"
-        price={136}
-      />
+      <section className="cards-list">
+        {cards}
+      </section>
     </div>
   )
 }
