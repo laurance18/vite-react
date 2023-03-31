@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './meme_generator/components/Navbar'
+import Header from './meme_generator/components/Header'
 
 function App() {
     return (
         <div className="App">
-            <Navbar />
+            <Header />
         </div>
     )
 }
