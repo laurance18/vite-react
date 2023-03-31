@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import './Meme.css';
 import memesData from '../memesData';
-import { useState } from 'react'
 
 export default function Meme() {
     
