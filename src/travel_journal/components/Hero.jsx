@@ -3,7 +3,6 @@ import data from '../data.js'
 
 export default function Hero() {
     const cards = data.map(item => {
-        console.log(item.coverImg)
         return (<Card 
             key={item.id}
             {...item}
