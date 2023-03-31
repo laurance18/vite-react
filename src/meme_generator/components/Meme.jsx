@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export default function Meme() {
     
-    const [memeImage, setMemeImage] = useState('https://i.imgflip.com/1bij.jpg')
+    const [memeImage, setMemeImage] = useState(memesData.data.memes[Math.floor(Math.random() * memesData.data.memes.length)].url)
     
     function getMemeImage() {
         setMemeImage(memesData.data.memes[Math.floor(Math.random() * memesData.data.memes.length)].url);  
@@ -30,7 +30,7 @@ export default function Meme() {
                     Get a new meme image 🖼
                 </button>
             </div>
-            <img src={memeImage} alt="meme"/>
+            <img src={memeImage} alt="meme" className='meme--image'/>
         </main>
     )
 }
