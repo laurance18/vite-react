@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './meme_generator/components/Header'
-import Meme from './meme_generator/components/Meme'
+import Navbar from './react_info_site/components/Navbar'
+import Main from './react_info_site/components/Main'
 
 function App() {
     return (
         <div className="App">
-            <Header />
-            <Meme />
+            <Navbar />
+            <Main />
         </div>
     )
 }
