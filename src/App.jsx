@@ -34,17 +34,30 @@ function App() {
     ))
 
     function rollDice() {
-      if(!tenzies) {
-          setDice(oldDice => oldDice.map(die => {
-              return die.isHeld ? 
-                  die :
-                  generateNewDie()
-          }))
-      } else {
-          setTenzies(false)
+      // IF WON AND TEXT IS NEW GAME
+      const allHeld = dice.every(die => die.isHeld)
+      const firstValue = dice[0].value
+      const allSameValue = dice.every(die => die.value === firstValue)
+      if (allHeld && allSameValue) {
           setDice(allNewDice())
-      }
-  }
+          setTenzies(false)
+      }  
+      
+      setDice(prevDice => {
+          const newDice = prevDice.map(die => {
+            if (die.isHeld) {
+              return die
+            } else {
+              return {
+                value: Math.ceil(Math.random() * 6),
+                isHeld: false,
+                id: die.id
+              }
+            }
+          })
+          return newDice
+        })
+    }
 
     function holdDice(id) {
         setDice(prevDice => {
