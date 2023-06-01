@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Die from './tenzies/components/Die'
+import 'nanoid'
 
 function App() {
     const [dice, setDice] = useState(allNewDice())
