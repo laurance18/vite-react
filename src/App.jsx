@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Die from './tenzies/components/Die'
 import {nanoid} from "nanoid"
+import {Confetti} from 'react-confetti'
 
 function App() {
     
