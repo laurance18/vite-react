@@ -1,25 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Die from './tenzies/components/Die'
 import {nanoid} from "nanoid"
 
 function App() {
     
-    function holdDice(id) {
-        setDice(prevDice => {
-          return prevDice.map(die => {
-            if (die.id === id) {
-              return {
-                ...die,
-                isHeld: !die.isHeld
-              }
-            }
-            return die
-          })
-        })
-      }
-    
     const [dice, setDice] = useState(allNewDice())
+    const [tenzies, setTenzies] = useState(false)
+
+    useEffect(() => {
+        const allDiceHeld = dice.every(die => die.isHeld)
+        const allDiceSameValue = dice.every(die => die.value === dice[0].value)
+        if (allDiceHeld && allDiceSameValue) {
+            setTenzies(true)
+            alert("You won!")
+        }         
+    }, [dice])
     
     function allNewDice() {
         const newDice = []
@@ -53,6 +49,20 @@ function App() {
           return newDice
         })
     }
+
+    function holdDice(id) {
+        setDice(prevDice => {
+          return prevDice.map(die => {
+            if (die.id === id) {
+              return {
+                ...die,
+                isHeld: !die.isHeld
+              }
+            }
+            return die
+          })
+        })
+      }
 
     return (
         <div className="App">
