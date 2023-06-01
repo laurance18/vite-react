@@ -6,8 +6,18 @@ import {nanoid} from "nanoid"
 function App() {
     
     function holdDice(id) {
-        console.log(id)
-    }
+        setDice(prevDice => {
+          return prevDice.map(die => {
+            if (die.id === id) {
+              return {
+                ...die,
+                isHeld: !die.isHeld
+              }
+            }
+            return die
+          })
+        })
+      }
     
     const [dice, setDice] = useState(allNewDice())
     
@@ -28,8 +38,21 @@ function App() {
     ))
 
     function rollDice() {
-        setDice(allNewDice())
-    }
+        setDice(prevDice => {
+          const newDice = prevDice.map(die => {
+            if (die.isHeld) {
+              return die
+            } else {
+              return {
+                value: Math.ceil(Math.random() * 6),
+                isHeld: false,
+                id: die.id
+              }
+            }
+          })
+          return newDice
+        })
+      }
 
     return (
         <div className="App">
