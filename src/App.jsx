@@ -4,6 +4,11 @@ import Die from './tenzies/components/Die'
 import {nanoid} from "nanoid"
 
 function App() {
+    
+    function holdDice(id) {
+        console.log(id)
+    }
+    
     const [dice, setDice] = useState(allNewDice())
     
     function allNewDice() {
@@ -19,7 +24,7 @@ function App() {
     }
     
     const diceElements = dice.map(die => (
-        <Die key={die.id} value={die.value} />
+        <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)}/>
     ))
 
     function rollDice() {
