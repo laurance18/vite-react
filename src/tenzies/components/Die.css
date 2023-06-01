@@ -6,4 +6,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+}
+
+.die-num {
+    font-size: 2rem;
 }

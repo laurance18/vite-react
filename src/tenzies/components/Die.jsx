@@ -2,8 +2,8 @@ import './Die.css'
 
 function Die(props) {
   return (
-    <div >
-      <h2 className="die">{props.value}</h2>
+    <div className="die">
+      <h2 className="die-num">{props.value}</h2>
     </div>
   );
 }
