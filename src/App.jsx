@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-
+import Intro from './quizzical/components/Intro'
 
 function App() {
     return (
         <div className="App">
-
+            <Intro />
         </div>
     )
 }
