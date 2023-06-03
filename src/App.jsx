@@ -1,10 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
     
-    const [gameStarted, setGameStarted] = useState(false)
     
+    const [gameStarted, setGameStarted] = useState(false)
+    const [questions, setQuestions] = useState([])
+
+    useEffect(() => {
+        async function getQuestions() {
+            const res = await fetch("https://opentdb.com/api.php?amount=5&difficulty=medium")
+            const data = await res.json()
+            setQuestions(data.results)
+        }
+        getQuestions()
+    }, [])
+
     return(
         <main>
             {
