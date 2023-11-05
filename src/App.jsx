@@ -1,39 +1,92 @@
+// MOVE TO SRC BEFORE USING
+
 import { useState, useEffect } from 'react'
 import './App.css'
+import Die from './tenzies/components/Die'
+import {nanoid} from "nanoid"
+import Confetti from 'react-confetti'
 
 function App() {
     
-    
-    const [gameStarted, setGameStarted] = useState(false)
-    const [questions, setQuestions] = useState([])
+    const [dice, setDice] = useState(allNewDice())
+    const [tenzies, setTenzies] = useState(false)
 
     useEffect(() => {
-        async function getQuestions() {
-            const res = await fetch("https://opentdb.com/api.php?amount=5&difficulty=medium")
-            const data = await res.json()
-            setQuestions(data.results)
+        const allDiceHeld = dice.every(die => die.isHeld)
+        const allDiceSameValue = dice.every(die => die.value === dice[0].value)
+        if (allDiceHeld && allDiceSameValue) {
+            setTenzies(true)
+        }         
+    }, [dice])
+    
+    function allNewDice() {
+        const newDice = []
+        for (let i = 0; i < 10; i++) {
+            newDice.push({
+                value: Math.ceil(Math.random() * 6), 
+                isHeld: false,
+                id: nanoid()
+            })
         }
-        getQuestions()
-    }, [])
+        return newDice
+    }
+    
+    const diceElements = dice.map(die => (
+        <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)}/>
+    ))
 
-    return(
-        <main>
-            {
-            !gameStarted ?
-            <div className="font-['karla']">
-                <img className="shape-top absolute right-0 w-20vw z-[-1]" src="assets/quizzical/shape-1.png" alt="Shape Top" />
-
-                <div className="intro--container flex flex-col justify-center items-center h-screen">
-                    <h1 className="font-bold text-3xl pb-2">Quizzical</h1>
-                    <p className="pb-2">Answer the questions and test your knowledge!</p>
-                    <button className="bg-[#F9A826] text-white font-bold font-['inter'] py-2 px-4 rounded-full mt-4 active:shadow-[inset_0_-2px_4px_rgba(0,0,0,0.6)]" onClick={() => setGameStarted(true)}>Start Quiz</button>
-                </div>
-
-                <img className="shape-bottom absolute bottom-0 w-18vw z-[-1]" src="assets/quizzical/shape-2.png" alt="Shape Bottom" />
-            </div> : (<p>Game Started.</p>)
+    function rollDice() {
+      // IF WON AND TEXT IS NEW GAME
+      const allHeld = dice.every(die => die.isHeld)
+      const firstValue = dice[0].value
+      const allSameValue = dice.every(die => die.value === firstValue)
+      if (allHeld && allSameValue) {
+          setDice(allNewDice())
+          setTenzies(false)
+      }  
+      
+      setDice(prevDice => {
+          const newDice = prevDice.map(die => {
+            if (die.isHeld) {
+              return die
+            } else {
+              return {
+                value: Math.ceil(Math.random() * 6),
+                isHeld: false,
+                id: die.id
+              }
             }
-        </main>
-        
+          })
+          return newDice
+        })
+    }
+
+    function holdDice(id) {
+        setDice(prevDice => {
+          return prevDice.map(die => {
+            if (die.id === id) {
+              return {
+                ...die,
+                isHeld: !die.isHeld
+              }
+            }
+            return die
+          })
+        })
+      }
+
+    return (
+        <div className="App">
+            <main>
+                {tenzies && <Confetti height={400}/>}
+                <h1 className="title">Tenzies</h1>
+                <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+                <div className="dice-container">
+                    {diceElements}
+                </div>
+                <button className="roll-dice" onClick={rollDice}>{tenzies ? "New Game" : "Roll Dice"}</button>
+            </main>
+        </div>
     )
 }
 
